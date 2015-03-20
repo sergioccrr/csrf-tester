@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSRF Tester</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="container">
+	<div class="tabpanel">
+		<ul class="nav nav-tabs" id="tabs">
+			<li class="active">
+				<a data-toggle="tab" href="#payload">Payload</a>
+			</li>
+			<li>
+				<a data-toggle="tab" href="#request">Request</a>
+			</li>
+			<li>
+				<a data-toggle="tab" href="#result">Result</a>
+			</li>
+		</ul>
+
+		<div class="tab-content">
+
+			<div class="tab-pane active" id="payload">
+				<div class="form-group">
+					<textarea class="form-control" rows="4" id="fPayload">first=foo&amp;second=bar</textarea>
+				</div>
+
+				<div class="form-group">
+					<button type="submit" class="btn btn-success" id="bContinue">Continue</button>
+				</div>
+			</div>
+
+			<div class="tab-pane" id="request">
+				<form class="form-horizontal" id="frm" target="ifrm">
+					<div class="form-group">
+						<label class="col-sm-3 control-label" for="fURL">URL:</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="fURL" value="http://posttestserver.com/post.php">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-3 control-label" for="fMethod">Method:</label>
+						<div class="col-sm-9">
+							<select class="form-control" id="fMethod">
+								<option>GET</option>
+								<option selected="selected">POST</option>
+							</select>
+						</div>
+					</div>
+
+					<hr />
+
+					<div id="fields">
+						<div class="alert alert-info">Use <strong>payload</strong> tab to generate fields.</div>
+					</div>
+
+					<hr />
+
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-9">
+							<button type="submit" class="btn btn-success" id="bRun">Run</button>
+						</div>
+					</div>
+				</form>
+			</div>
+
+
+			<div class="tab-pane" id="result">
+				<iframe src="about:blank" width="100%" frameborder="0" name="ifrm"></iframe>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://cdn.rawgit.com/kvz/phpjs/master/functions/strings/parse_str.js"></script>
+<script src="https://cdn.rawgit.com/kvz/phpjs/master/functions/strings/htmlspecialchars.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>

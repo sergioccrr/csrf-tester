@@ -1,0 +1,21 @@
+body * {
+	outline: none !important;
+}
+
+.form-control:focus {
+	-webkit-box-shadow: none !important;
+	        box-shadow: none !important;
+}
+
+.container {
+	max-width: 750px;
+	margin-top: 50px;
+}
+
+.tab-content {
+	padding: 25px;
+	border-left: 1px solid #DDDDDD;
+	border-right: 1px solid #DDDDDD;
+	border-bottom: 1px solid #DDDDDD;
+	border-radius: 0px 0px 4px 4px;
+}
