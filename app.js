@@ -55,6 +55,9 @@ jQuery(document).ready(function() {
 		var action = jQuery('#fURL').val();
 		var method = jQuery('#fMethod').val();
 
+		jQuery('#result .alert').hide();
+		jQuery('#result iframe').show();
+
 		jQuery('#frm')
 		.attr('action', action)
 		.attr('method', method)

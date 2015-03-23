@@ -19,3 +19,11 @@ body * {
 	border-bottom: 1px solid #DDDDDD;
 	border-radius: 0px 0px 4px 4px;
 }
+
+#payload, #request {
+	min-height: 255px;
+}
+
+#result iframe {
+	display: none;
+}
