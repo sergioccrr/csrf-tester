@@ -1,7 +1,17 @@
+var hook = false;
+
 jQuery(document).ready(function() {
 
 	jQuery('#bContinue').on('click', function(event){
 		event.preventDefault();
+
+		if (!hook) {
+			window.onbeforeunload = function() {
+				return 'Are you sure you want to leave this page?';
+			}
+
+			hook = true;
+		}
 
 		var i = 0;
 		var html = '';
