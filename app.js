@@ -27,7 +27,7 @@ jQuery(document).ready(function() {
 			html += '<div class="input-group">';
 			html += '<input type="text" class="form-control" id="f' + i + '" name="' + htmlspecialchars(key) + '" value="' + htmlspecialchars(payload[key]) + '" />';
 			html += '<span class="input-group-btn">';
-			html += '<button class="btn btn-success cbx" data-field="f' + i + '">';
+			html += '<button type="button" class="btn btn-success cbx" data-field="f' + i + '">';
 			html += '<span class="glyphicon glyphicon-ok"></span>';
 			html += '</button>';
 			html += '</span>';
