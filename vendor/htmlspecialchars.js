@@ -1,4 +1,4 @@
-module.exports = function htmlspecialchars (string, quoteStyle, charset, doubleEncode) {
+function htmlspecialchars (string, quoteStyle, charset, doubleEncode) {
   //       discuss at: http://locutus.io/php/htmlspecialchars/
   //      original by: Mirek Slugen
   //      improved by: Kevin van Zonneveld (http://kvz.io)
