@@ -2,6 +2,8 @@ var hook = false;
 
 jQuery(document).ready(function() {
 
+	jQuery('#result .alert-info').hide();
+
 	jQuery('#bContinue').on('click', function(event){
 		event.preventDefault();
 
@@ -64,13 +66,24 @@ jQuery(document).ready(function() {
 
 		var action = jQuery('#fURL').val();
 		var method = jQuery('#fMethod').val();
+		var target = '';
 
 		jQuery('#result .alert').hide();
-		jQuery('#result iframe').show();
+
+		if (jQuery('#fTarget').val() === 'iFrame') {
+			target = 'ifrm' ;
+			jQuery('#result iframe').show();
+
+		} else if (jQuery('#fTarget').val() === 'New tab/window') {
+			target = '_blank' ;
+			jQuery('#result iframe').hide();
+			jQuery('#result .alert-info').show();
+		}
 
 		jQuery('#frm')
 		.attr('action', action)
 		.attr('method', method)
+		.attr('target', target)
 		.submit();
 
 		jQuery('#tabs a[href="#result"]').tab('show');
